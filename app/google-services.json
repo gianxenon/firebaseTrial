@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1038317657682",
+    "project_id": "lendingmonitoringtool",
+    "storage_bucket": "lendingmonitoringtool.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1038317657682:android:64d54cd9c23c991960098b",
+        "android_client_info": {
+          "package_name": "com.example.lendingmonitoringtool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1038317657682-cunpbbaasj8mvgs98ga6s3jd1bggakqk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzfDVOIbg7uOhCTX-EZbH3Jbw7ljKOqwc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1038317657682-cunpbbaasj8mvgs98ga6s3jd1bggakqk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
