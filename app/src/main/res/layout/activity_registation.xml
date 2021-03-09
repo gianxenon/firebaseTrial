@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Registation">
+    tools:context=".Reg_activity">
 
 
         <LinearLayout
@@ -12,7 +12,7 @@
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="20dp"
-            android:layout_marginRight="20dp"
+
             android:layout_marginEnd="20dp"
             android:orientation="vertical"
             tools:ignore="UselessParent">
@@ -25,12 +25,13 @@
                 android:layout_marginTop="26dp"
                 android:background="@drawable/profilebg"
                 />
+
             <TextView
                 android:id="@+id/txt_register"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Register" />
+                android:text="@string/txtRegister" />
 
             <ScrollView
                 android:id="@+id/scr_lay"
@@ -54,7 +55,7 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="20dp"
                         android:ems="10"
-                        android:hint="Name"
+                        android:hint="@string/edt_fn"
                         android:importantForAutofill="no"
                         android:inputType="textPersonName" />
 
@@ -65,7 +66,7 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="20dp"
                         android:ems="10"
-                        android:hint="Last name"
+                        android:hint="@string/edt_ln"
                         android:importantForAutofill="no"
                         android:inputType="textPersonName" />
 
@@ -74,9 +75,9 @@
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:ems="10"
                         android:layout_marginTop="20dp"
-                        android:hint="Birth date"
+                        android:ems="10"
+                        android:hint="@string/edt_bday"
                         android:importantForAutofill="no"
                         android:inputType="none" />
 
@@ -85,9 +86,9 @@
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:ems="10"
                         android:layout_marginTop="20dp"
-                        android:hint="Contact"
+                        android:ems="10"
+                        android:hint="@string/edt_contact"
                         android:importantForAutofill="no"
                         android:inputType="phone" />
 
@@ -96,9 +97,9 @@
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:ems="10"
                         android:layout_marginTop="20dp"
-                        android:hint="Email"
+                        android:ems="10"
+                        android:hint="@string/edt_email"
                         android:importantForAutofill="no"
                         android:inputType="textEmailAddress" />
 
@@ -107,9 +108,9 @@
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:ems="10"
                         android:layout_marginTop="20dp"
-                        android:hint="Password"
+                        android:ems="10"
+                        android:hint="@string/edt_pass"
                         android:importantForAutofill="no"
                         android:inputType="textPassword" />
 
@@ -119,7 +120,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_margin="30dp"
-                        android:text="DONE"
+                        android:text="@string/regpro_btn"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:textColor="@android:color/background_light"
                         android:textSize="16sp"
