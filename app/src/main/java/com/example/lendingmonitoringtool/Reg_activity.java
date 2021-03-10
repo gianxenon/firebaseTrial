@@ -7,16 +7,12 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-
 import android.widget.Button;
 import android.widget.EditText;
-
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
 import java.io.IOException;
 import java.util.Calendar;
-
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Reg_activity extends AppCompatActivity {
@@ -27,20 +23,25 @@ public class Reg_activity extends AppCompatActivity {
     Uri imageUri;
 
 
-    EditText editTextDate,edt_fn,edt,ln,edt_num,edt_bday,edt_email,edt_pass;
+    EditText editTextDate,edt_fn,edt_ln,edt_num,edt_bday,edt_email,edt_pass;
     DatePickerDialog.OnDateSetListener onDateSetListener;
     Button btn_done;
 
-    FirebaseDatabase db = FirebaseDatabase.getInstance();
-    DatabaseReference reference = db.getReference();
+    FirebaseDatabase db = FirebaseDatabase.getInstance("https://lendingmonitoringtool-default-rtdb.firebaseio.com/");
+    DatabaseReference reference ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registation);
+btn_done = findViewById(R.id.regpro_btn);
+        editTextDate  = findViewById(R.id.edt_bday);
+        edt_fn = findViewById(R.id.edt_fn);
+        edt_ln = findViewById(R.id.edt_ln);
+        edt_num = findViewById(R.id.edt_contact);
+        edt_email = findViewById(R.id.edt_email);
+        edt_pass = findViewById(R.id.edt_pass);
 
-         editTextDate  = findViewById(R.id.edt_bday);
-
-        ProfileImage = (CircleImageView) findViewById(R.id.profile_image);
+        ProfileImage =  findViewById(R.id.profile_image);
         ProfileImage.setOnClickListener(v -> {
 
             Intent gallery = new Intent();
@@ -67,13 +68,21 @@ public class Reg_activity extends AppCompatActivity {
         };
 
         btn_done.setOnClickListener(v -> {
+            //getting all the values
+            String fn = edt_fn.getText().toString();
+            String ln = edt_ln.getText().toString();
+            String bday = editTextDate.getText().toString();
+            String num = edt_num.getText().toString();
+            String eml = edt_email.getText().toString();
+            String pword = edt_pass.getText().toString();
+            String nofitstat = "pending";
+        myFireBaseDataPoll userHelper = new myFireBaseDataPoll(fn,ln,bday,num,eml,pword,nofitstat);
+            reference = db.getReference();
+            reference.child("notif").setValue(userHelper);
 
-
-
-        });
-
-
+    });
     }//On Create
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
